@@ -20,7 +20,7 @@ function sumTop3(input: string): number {
   return caloriesSorted[0] + caloriesSorted[1] + caloriesSorted[2];
 }
 
-describe("exercise-1", () => {
+describe("exercise1", () => {
   it("example", async () => {
     expect(sortCalories(exercise1ExampleInput)[0]).toBe(24000);
   });

@@ -126,7 +126,7 @@ function scoreIfStrategy(input: string): number {
     .reduce((acc, i) => acc + i, 0);
 }
 
-describe("exercise-2", () => {
+describe("exercise2", () => {
   it("example", async () => {
     expect(score(exercise2ExampleInput)).toBe(15);
   });
