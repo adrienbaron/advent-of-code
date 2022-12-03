@@ -31,26 +31,23 @@ const exercise3 = (input: string) => {
       const common = c2.split("").filter((c) => inC1.has(c))[0];
       return letterToScore(common);
     })
-    .reduce((acc, v) => acc + v, 0);
+    .sum();
 };
 
 const exercise3Part2 = (input: string) => {
-  const ruckSacks = input.split("\n");
+  return input
+    .split("\n")
+    .splitInGroupsOf(3)
+    .map(([r1, r2, r3]) => {
+      const r1Set = new Set(r1.split(""));
+      const r2AndR1Set = new Set(
+        r2.split("").filter((item) => r1Set.has(item))
+      );
 
-  let total = 0;
-  for (let i = 0; i < ruckSacks.length; i = i + 3) {
-    const r1 = new Set(ruckSacks[i].split(""));
-    const r2AndR1 = new Set(
-      ruckSacks[i + 1].split("").filter((item) => r1.has(item))
-    );
-
-    const common = ruckSacks[i + 2]
-      .split("")
-      .filter((item) => r2AndR1.has(item))[0];
-    total += letterToScore(common);
-  }
-
-  return total;
+      const common = r3.split("").filter((item) => r2AndR1Set.has(item))[0];
+      return letterToScore(common);
+    })
+    .sum();
 };
 
 describe("exercise3", () => {

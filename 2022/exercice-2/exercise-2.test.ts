@@ -102,7 +102,7 @@ function score(input: string): number {
         scoreForMatchResult[matchWinLose(meShape, themShape)]
       );
     })
-    .reduce((acc, i) => acc + i, 0);
+    .sum();
 }
 
 function scoreIfStrategy(input: string): number {
@@ -123,7 +123,7 @@ function scoreIfStrategy(input: string): number {
         scoreForMatchResult[matchWinLose(meShape, themShape)]
       );
     })
-    .reduce((acc, i) => acc + i, 0);
+    .sum();
 }
 
 describe("exercise2", () => {

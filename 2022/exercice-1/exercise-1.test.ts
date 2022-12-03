@@ -9,7 +9,7 @@ function sortCalories(input: string): number[] {
       elfCaloriesLine
         .split("\n")
         .map((str) => parseInt(str))
-        .reduce((acc, num) => acc + num, 0)
+        .sum()
     )
     .sort((a, b) => b - a);
 }
